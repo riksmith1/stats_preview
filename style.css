@@ -1,0 +1,231 @@
+:root {
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 40%);
+    --white: hsl(0, 0%, 100%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    background-color: var(--very-dark-blue);
+    font-size: 15px;
+}
+
+.card {
+    background-color: var(--dark-desaturated-blue);
+}
+
+/*===========================
+        Typography
+===========================*/
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: var(--soft-violet);
+}
+
+p {
+    color: var(--transparent-white);
+    text-align: center;
+    line-height: 1.7;
+}
+
+.stats-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.stats-title {
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    color: var(--slightly-transparent-white);
+}
+
+
+
+/*===========================
+        Images
+===========================*/
+
+
+.image {
+    position: relative;
+    background-color: var(--soft-violet);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    mix-blend-mode: multiply;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    opacity: 0.20;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.desktop-img {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: block;
+    }
+}
+
+
+/*===========================
+        Layout
+===========================*/
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 8.2em 1.5em;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.stats-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    padding: 2.5em 2.2em 1em 2.2em;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+h1 {
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 2.7em;
+}
+
+.stats-number {
+    margin-bottom: 0.2em;
+}
+
+.stats {
+    margin-bottom: 1.8em;
+}
+
+@media screen and (min-width: 890px) {
+
+    .container {
+        flex-direction: row;
+        /*justify-content: center;*/
+        max-width: 1200px;
+    }
+
+    .image {
+        order: 2;
+        width: 50%;
+        border-radius: 0 0.5rem 0.5rem 0;
+        max-width: 540px;
+    }
+
+    .desktop-img {
+        display: block;
+    }
+
+    .mobile-img {
+        display: none;
+    }
+
+    .card {
+        order: 1;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    img, .overlay {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    .stats-block {
+        flex-direction: row;
+    }
+
+    .stats {
+        margin-right: 1.5em;
+        align-items: flex-start;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card {
+       padding: 2em 5em 2em 5em;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: left;
+        margin-bottom: 0.7em;
+    }
+
+    p {
+        text-align: left;
+        margin-bottom: 3em;
+    }
+}
+
+@media screen and (min-width: 1040px) {
+
+    .card {
+       padding: 5em 7em 2em 5em;
+    }
+
+    p {
+        text-align: left;
+        margin-bottom: 5em;
+    }
+}
